@@ -13,16 +13,16 @@ namespace cSharp_WebApp.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult XML()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "test";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult JSON()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "test123";
 
             return View();
         }
