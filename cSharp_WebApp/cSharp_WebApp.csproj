@@ -200,6 +200,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Content\Songs.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -234,6 +235,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\XML.cshtml" />
     <Content Include="Views\Home\JSON.cshtml" />
+    <Content Include="Views\Content\Songs.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
