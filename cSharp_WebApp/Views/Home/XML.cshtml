@@ -1,16 +1,31 @@
-﻿@{
+﻿@using System.Data;
+
+@{
     ViewBag.Title = "XML";
 }
 <h2>@ViewBag.Title</h2>
 
 <div>
-    <table class="songs" id="songs">
-        <thead>Title</thead>
-        <thead>Released</thead>
-
+    <table class="table table-reflow table-hover">
         <tr>
-            <td>test1</td>
-            <td>@ViewBag.Message</td>
+        <th>Title</th>
+        <th>Released</th>
+        <th>Playtime</th>
+        <th>Revealed</th>
+        <th>Rating</th>
         </tr>
+        @{
+            DataSet ds = Session["xmlDataSet"] as DataSet;
+        }
+        @foreach (DataRow dr in ds.Tables[0].Rows)
+        {
+            <tr>
+                <td>@dr["title"]</td>
+                <td>@dr["artist"]</td>
+                <td>@dr["playtime"]</td>
+                <td>@dr["revealed"]</td>
+                <td>@dr["rating"]</td>
+            </tr>
+        }
     </table>
 </div>

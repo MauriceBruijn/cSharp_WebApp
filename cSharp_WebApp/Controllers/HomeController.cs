@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Xml;
+using System.Data;
 using System.Web.Mvc;
 using System.IO;
 
@@ -17,22 +18,27 @@ namespace cSharp_WebApp.Controllers
 
         public ActionResult XML()
         {
-            XmlDataDocument xmldoc = new XmlDataDocument();
-            XmlNodeList xmlnode;
-            FileStream fs = new FileStream("Content/Songs.xml", FileMode.Open, FileAccess.Read);
-            xmldoc.Load(fs);
-            xmlnode = xmldoc.GetElementsByTagName("Artist");
+            DataSet ds = new DataSet("playlist");
 
-                switch (xmldoc.NodeType)
-                {
-                   case XmlNodeType.Element: // The node is an element.
-                        Console.Write("<" + xmldoc.Artist);
-                   break;
-                     
-                   case XmlNodeType.Text: //Display the text in each element.
-                        Console.WriteLine(xmldoc.Value);
-                       break;
-            }
+            DataTable dtSongs = new DataTable("song");
+
+            DataColumn dcTitle = new DataColumn("title");
+            DataColumn dcArtist = new DataColumn("artist");
+            DataColumn dcPlaytime = new DataColumn("playtime");
+            DataColumn dcRevealed = new DataColumn("revealed");
+            DataColumn dcRating = new DataColumn("rating");
+
+            ds.Tables.Add(dtSongs);
+
+            dtSongs.Columns.Add(dcTitle);
+            dtSongs.Columns.Add(dcArtist);
+            dtSongs.Columns.Add(dcPlaytime);
+            dtSongs.Columns.Add(dcRevealed);
+            dtSongs.Columns.Add(dcRating);
+
+            ds.ReadXml(Server.MapPath(@"..\App_Data\Songs.xml"));
+            Session["xmlDataSet"] = ds;
+            return View();
         }
 
         public ActionResult JSON()
