@@ -234,10 +234,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\XML.cshtml" />
-    <Content Include="Views\Home\JSON.cshtml" />
+    <Content Include="Views\Songs\JSON.cshtml" />
     <Content Include="Views\Content\Songs.json" />
-    <Content Include="Views\Songs\Index.cshtml" />
+    <Content Include="Views\Songs\XML.cshtml" />
+    <Content Include="Views\Songs\Edit.cshtml" />
+    <Content Include="Views\Songs\Delete.cshtml" />
+    <Content Include="Views\Songs\Show.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

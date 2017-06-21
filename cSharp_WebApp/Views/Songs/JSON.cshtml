@@ -1,18 +1,13 @@
 ﻿@using System.Data;
 
-@{
-    ViewBag.Title = "XML";
-}
-<h2>@ViewBag.Title</h2>
-
 <div>
     <table class="table table-reflow table-hover">
         <tr>
-        <th>Title</th>
-        <th>Released</th>
-        <th>Playtime</th>
-        <th>Revealed</th>
-        <th>Rating</th>
+            <th>Title</th>
+            <th>Released</th>
+            <th>Playtime</th>
+            <th>Revealed</th>
+            <th>Rating</th>
         </tr>
         @{
             DataSet ds = Session["xmlDataSet"] as DataSet;
@@ -20,7 +15,7 @@
         @foreach (DataRow dr in ds.Tables[0].Rows)
         {
             <tr>
-                <td><a href="">@dr["title"]</a></td>
+                <td><a href="">@dr["title"]</td>
                 <td>@dr["artist"]</td>
                 <td>@dr["playtime"]</td>
                 <td>@dr["revealed"]</td>

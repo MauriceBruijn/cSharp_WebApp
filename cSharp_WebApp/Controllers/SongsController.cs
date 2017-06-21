@@ -13,10 +13,16 @@ namespace cSharp_WebApp.Controllers
         // GET: Songs
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult XML()
+        {
             DataSet ds = new DataSet("playlist");
 
             DataTable dtSongs = new DataTable("song");
 
+            DataColumn dcId = new DataColumn("id");
             DataColumn dcTitle = new DataColumn("title");
             DataColumn dcArtist = new DataColumn("artist");
             DataColumn dcPlaytime = new DataColumn("playtime");
@@ -25,14 +31,33 @@ namespace cSharp_WebApp.Controllers
 
             ds.Tables.Add(dtSongs);
 
+            dtSongs.Columns.Add(dcId);
             dtSongs.Columns.Add(dcTitle);
             dtSongs.Columns.Add(dcArtist);
             dtSongs.Columns.Add(dcPlaytime);
             dtSongs.Columns.Add(dcRevealed);
             dtSongs.Columns.Add(dcRating);
 
-            ds.ReadXml(Server.MapPath(@"..\App_Data\Songs.xml"));
+            ds.ReadXml(Server.MapPath("~/App_Data/Songs.xml"));
             Session["xmlDataSet"] = ds;
+            return View();
+        }
+
+        public ActionResult JSON()
+        {
+           
+            return View();
+        }
+
+        public ActionResult Edit(id)
+        {
+
+            return View();
+        }
+
+        public ActionResult Delete(id)
+        {
+
             return View();
         }
     }

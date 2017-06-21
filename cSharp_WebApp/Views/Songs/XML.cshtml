@@ -1,5 +1,7 @@
 ﻿@using System.Data;
 
+
+<div>
 <table class="table table-reflow table-hover">
     <tr>
         <th>Title</th>
@@ -11,7 +13,6 @@
     @{
         DataSet ds = Session["xmlDataSet"] as DataSet;
     }
-    <table>
         @foreach (DataRow dr in ds.Tables[0].Rows)
         {
             <tr>
@@ -20,9 +21,11 @@
                 <td>@dr["playtime"]</td>
                 <td>@dr["revealed"]</td>
                 <td>@dr["rating"]</td>
+                <td><a href="Edit?id=@dr["id"]">Edit</a></td>
+                <td><a href="Delete?id=@dr["id"]">Delete</a></td>
             </tr>
         }
     </table>
-
+   </div>
 
 
