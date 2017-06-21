@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SongsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -236,6 +237,7 @@
     <Content Include="Views\Home\XML.cshtml" />
     <Content Include="Views\Home\JSON.cshtml" />
     <Content Include="Views\Content\Songs.json" />
+    <Content Include="Views\Songs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

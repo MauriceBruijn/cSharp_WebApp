@@ -1,0 +1,41 @@
+﻿@using System.Data;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    DataSet ds = new DataSet("playlist");
+
+    DataTable dtSongs = new DataTable("song");
+
+    DataColumn dcTitle = new DataColumn("title");
+    DataColumn dcArtist = new DataColumn("artist");
+    DataColumn dcPlaytime = new DataColumn("playtime");
+    DataColumn dcRevealed = new DataColumn("revealed");
+    DataColumn dcRating = new DataColumn("rating");
+
+    ds.Tables.Add(dtSongs);
+
+    dtSongs.Columns.Add(dcTitle);
+    dtSongs.Columns.Add(dcArtist);
+    dtSongs.Columns.Add(dcPlaytime);
+    dtSongs.Columns.Add(dcRevealed);
+    dtSongs.Columns.Add(dcRating);
+
+    ds.ReadXml(Server.MapPath(@"..\App_Data\Songs.xml"));
+}
+
+<table>
+    @foreach (DataRow dr in ds.Tables[0].Rows)
+    {
+        <tr>
+            <td>@dr["title"]</td>
+            <td>@dr["artist"]</td>
+            <td>@dr["playtime"]</td>
+            <td>@dr["revealed"]</td>
+            <td>@dr["rating"]</td>
+        </tr>
+    }
+</table>
+
+
+
