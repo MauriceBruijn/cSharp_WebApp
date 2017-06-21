@@ -20,7 +20,7 @@
         @foreach (DataRow dr in ds.Tables[0].Rows)
         {
             <tr>
-                <td>@dr["title"]</td>
+                <td><a href="">@dr["title"]</a></td>
                 <td>@dr["artist"]</td>
                 <td>@dr["playtime"]</td>
                 <td>@dr["revealed"]</td>
