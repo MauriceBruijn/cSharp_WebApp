@@ -49,15 +49,14 @@ namespace cSharp_WebApp.Controllers
             return View();
         }
 
-        public ActionResult Edit(id)
+        public ActionResult Edit()
         {
 
             return View();
         }
 
-        public ActionResult Delete(id)
+        public ActionResult Delete()
         {
-
             return View();
         }
     }

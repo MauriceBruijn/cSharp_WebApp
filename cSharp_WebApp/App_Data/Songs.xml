@@ -1,13 +1,21 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" standalone="yes"?>
 <playlist>
-    <song>
-      <id>1</id>
-      <title>test</title>
-      <artist>test</artist>
-      <playtime>test</playtime>
-      <revealed>test</revealed>
-      <rating>test</rating>
-    </song>
+  <song>
+    <id>0</id>
+    <title>test</title>
+    <artist>test</artist>
+    <playtime>test</playtime>
+    <revealed>test</revealed>
+    <rating>test</rating>
+  </song>
+  <song>
+    <id>1</id>
+    <title>test1</title>
+    <artist>test1</artist>
+    <playtime>test1</playtime>
+    <revealed>test1</revealed>
+    <rating>test1</rating>
+  </song>
   <song>
     <id>2</id>
     <title>test2</title>
@@ -15,5 +23,21 @@
     <playtime>test2</playtime>
     <revealed>test2</revealed>
     <rating>test2</rating>
+  </song>
+  <song>
+    <id>3</id>
+    <title>test3</title>
+    <artist>test3</artist>
+    <playtime>test3</playtime>
+    <revealed>test3</revealed>
+    <rating>test3</rating>
+  </song>
+  <song>
+    <id>4</id>
+    <title>test4</title>
+    <artist>test4</artist>
+    <playtime>test4</playtime>
+    <revealed>test4</revealed>
+    <rating>test4</rating>
   </song>
 </playlist>

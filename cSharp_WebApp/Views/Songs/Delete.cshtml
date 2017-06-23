@@ -1,0 +1,34 @@
+﻿@using System.Data;
+@{
+    DataSet ds = Session["xmlDataSet"] as DataSet;
+
+    string id = Request.QueryString["id"];
+
+    if (IsPost)
+    {
+        DataRow[] drArray = ds.Tables[0].Select("id=" + id); 
+        drArray[0].Delete();
+
+        ds.WriteXml(Server.MapPath("~/App_Data/Songs.xml"));
+    }
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-push-3">
+            <div class="panel panel-default">
+                <div class="panel-heading"><center>Your at the point of deleting a record...</center></div>
+                <div class="panel-body">
+                    <form class="form-horizontal" method="post">
+                        <div class="col-md-8 col-md-offset-4">
+                               <label>Are you sure ?</label>
+                        </div>
+                        <div class="col-md-8 col-md-offset-4">
+                                <input type="submit" value="Yes" class="btn btn-danger" />
+                                <a href="/Songs/XML" class="btn btn-primary">No im not</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

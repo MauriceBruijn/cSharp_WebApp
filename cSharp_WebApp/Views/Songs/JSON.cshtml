@@ -1,26 +1,36 @@
 ﻿@using System.Data;
 
-<div>
-    <table class="table table-reflow table-hover">
-        <tr>
-            <th>Title</th>
-            <th>Released</th>
-            <th>Playtime</th>
-            <th>Revealed</th>
-            <th>Rating</th>
-        </tr>
-        @{
-            DataSet ds = Session["xmlDataSet"] as DataSet;
-        }
-        @foreach (DataRow dr in ds.Tables[0].Rows)
-        {
-            <tr>
-                <td><a href="">@dr["title"]</td>
-                <td>@dr["artist"]</td>
-                <td>@dr["playtime"]</td>
-                <td>@dr["revealed"]</td>
-                <td>@dr["rating"]</td>
-            </tr>
-        }
-    </table>
+<div class="container">
+    <div class="row">
+        <div class="col-md-11 col-md-offset-0">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="tableh table table-reflow table-hover">
+                        <tr>
+                            <th>Title</th>
+                            <th>Released</th>
+                            <th>Playtime</th>
+                            <th>Revealed</th>
+                            <th>Rating</th>
+                            <th>+</th>
+                            <th>-</th>
+                        </tr>
+                        
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="Edit?id=">Edit</a></td>
+                                <td><a href="Delete?id=">Delete</a></td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+

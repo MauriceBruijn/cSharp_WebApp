@@ -181,6 +181,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Data\Songs.json" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -235,11 +236,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Songs\JSON.cshtml" />
-    <Content Include="Views\Content\Songs.json" />
     <Content Include="Views\Songs\XML.cshtml" />
-    <Content Include="Views\Songs\Edit.cshtml" />
     <Content Include="Views\Songs\Delete.cshtml" />
-    <Content Include="Views\Songs\Show.cshtml" />
+    <Content Include="Views\Songs\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
