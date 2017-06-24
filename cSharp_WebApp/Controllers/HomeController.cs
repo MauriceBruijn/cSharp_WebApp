@@ -13,23 +13,5 @@ namespace cSharp_WebApp.Controllers
         {
             return View();
         }
-
-        public ActionResult XML()
-        {
-            
-            return View();
-        }
-
-        public ActionResult JSON()
-        {
-            int a = 5;
-            
-            for (int i = 0; i < a; i++)
-            {
-                ViewBag.Message = "test123";
-            }
-
-            return View();
-        }
     }
 }

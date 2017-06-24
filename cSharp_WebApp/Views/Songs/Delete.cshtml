@@ -6,7 +6,7 @@
 
     if (IsPost)
     {
-        DataRow[] drArray = ds.Tables[0].Select("id=" + id);
+        DataRow[] drArray = ds.Tables[0].Select("id="+ id);
         drArray[0].Delete();
 
         ds.WriteXml(Server.MapPath("~/App_Data/Songs.xml"));

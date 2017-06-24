@@ -88,4 +88,18 @@
     <revealed>test10</revealed>
     <rating>test10</rating>
   </song>
+  <song>
+    <title>test</title>
+    <artist>test</artist>
+    <playtime>test</playtime>
+    <revealed>test</revealed>
+    <rating>test</rating>
+  </song>
+  <song>
+    <title>test</title>
+    <artist>test</artist>
+    <playtime>test</playtime>
+    <revealed>test</revealed>
+    <rating>test</rating>
+  </song>
 </playlist>
