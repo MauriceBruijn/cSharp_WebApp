@@ -234,7 +234,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Songs\JSON.cshtml" />
     <Content Include="Views\Songs\XML.cshtml" />
     <Content Include="Views\Songs\Delete.cshtml" />
     <Content Include="Views\Songs\Edit.cshtml" />

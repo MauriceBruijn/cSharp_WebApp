@@ -3,22 +3,24 @@
     DataSet ds = Session["xmlDataSet"] as DataSet;
 
     string id = Request.QueryString["id"];
-    var table = ds.Tables[0].Select("id="+ id);
+    var table = ds.Tables[0].Select("id=" + id);
 
     if (IsPost)
     {
-        DataRow dr = ds.Tables[0].NewRow();
-        
+        // PROBLEEMPJE HIER !!
+      /*  DataRow dr = ds.Tables[0].Rows.Add();
+
         dr["id"] = Request.Form["id"];
         dr["title"] = Request.Form["title"];
         dr["artist"] = Request.Form["artist"];
         dr["playtime"] = Request.Form["playtime"];
-        dr["revealed"] = Request.Form["revealed"];
+        dr["release"] = Request.Form["release"];
         dr["rating"] = Request.Form["rating"];
 
-        ds.Tables[0].Rows.Add(dr);
+        ds.Tables[0].AcceptChanges();
 
         ds.WriteXml(Server.MapPath("~/App_Data/Songs.xml"));
+        */
     }
 }
 <div class="container">
@@ -30,8 +32,6 @@
                     <form class="form-horizontal" method="post">
                         @foreach (DataRow dr in table)
                         {
-                        
-
                         <div class="form-group">
                               <label for="title" class="col-md-4 control-label">Title:</label>
 
@@ -60,7 +60,7 @@
                             <label for="revealed" class="col-md-4 control-label">Revealed:</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="revealed" class="form-control" name="revealed" value="@dr["revealed"]"/>
+                                <input type="text" id="revealed" class="form-control" name="revealed" value="@dr["release"]"/>
                             </div>
                         </div>
 

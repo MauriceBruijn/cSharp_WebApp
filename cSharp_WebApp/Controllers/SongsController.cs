@@ -26,7 +26,7 @@ namespace cSharp_WebApp.Controllers
             DataColumn dcTitle = new DataColumn("title");
             DataColumn dcArtist = new DataColumn("artist");
             DataColumn dcPlaytime = new DataColumn("playtime");
-            DataColumn dcRevealed = new DataColumn("revealed");
+            DataColumn dcRelease = new DataColumn("release");
             DataColumn dcRating = new DataColumn("rating");
 
             ds.Tables.Add(dtSongs);
@@ -35,19 +35,14 @@ namespace cSharp_WebApp.Controllers
             dtSongs.Columns.Add(dcTitle);
             dtSongs.Columns.Add(dcArtist);
             dtSongs.Columns.Add(dcPlaytime);
-            dtSongs.Columns.Add(dcRevealed);
+            dtSongs.Columns.Add(dcRelease);
             dtSongs.Columns.Add(dcRating);
 
             ds.ReadXml(Server.MapPath("~/App_Data/Songs.xml"));
             Session["xmlDataSet"] = ds;
             return View();
         }
-
-        public ActionResult JSON()
-        {
-            return View();
-        }
-
+        
         public ActionResult Add()
         {
             return View();

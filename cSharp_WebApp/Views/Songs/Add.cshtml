@@ -10,11 +10,10 @@
         dr["title"] = Request.Form["title"];
         dr["artist"] = Request.Form["artist"];
         dr["playtime"] = Request.Form["playtime"];
-        dr["revealed"] = Request.Form["revealed"];
+        dr["release"] = Request.Form["release"];
         dr["rating"] = Request.Form["rating"];
 
         ds.Tables[0].Rows.Add(dr);
-
         ds.WriteXml(Server.MapPath("~/App_Data/Songs.xml"));
     }
 }
@@ -29,7 +28,7 @@
                                 <label for="id" class="col-md-4 control-label">ID:</label>
                               
                                 <div class="col-md-6">
-                                        <input type="text" id="id" class="form-control" name="id"/>
+                                        <input type="text" id="id" class="form-control" name="id" placeholder="Make sure you dont copy previous ID"/>
                                  </div>
                               </div>
 
@@ -37,7 +36,7 @@
                                 <label for="title" class="col-md-4 control-label">Title:</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" id="title" class="form-control" name="title"/>
+                                    <input type="text" id="title" class="form-control" name="title" placeholder="Song name"/>
                                 </div>
                             </div>
 
@@ -45,7 +44,7 @@
                                 <label for="artist" class="col-md-4 control-label">Artist:</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" id="artist" class="form-control" name="artist" />
+                                    <input type="text" id="artist" class="form-control" name="artist" placeholder="The singer of the song"/>
                                 </div>
                             </div>
 
@@ -53,15 +52,15 @@
                                 <label for="playtime" class="col-md-4 control-label">Playtime:</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" id="playtime" class="form-control" name="playtime" />
+                                    <input type="text" id="playtime" class="form-control" name="playtime" placeholder="Duration of the song"/>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="revealed" class="col-md-4 control-label">Revealed:</label>
+                                <label for="release" class="col-md-4 control-label">Release:</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" id="revealed" class="form-control" name="revealed"/>
+                                    <input type="text" id="release" class="form-control" name="release" placeholder="Song released on"/>
                                 </div>
                             </div>
 
@@ -69,7 +68,7 @@
                                 <label for="rating" class="col-md-4 control-label">Rating:</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" id="rating" class="form-control" name="rating"/>
+                                    <input type="text" id="rating" class="form-control" name="rating" placeholder="1 - 5"/>
                                 </div>
                             </div>
 
