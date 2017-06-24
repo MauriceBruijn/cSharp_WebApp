@@ -1,0 +1,88 @@
+﻿@using System.Data;
+@{
+    DataSet ds = Session["xmlDataSet"] as DataSet;
+
+    if (IsPost)
+    {
+        DataRow dr = ds.Tables[0].NewRow();
+
+        dr["id"] = Request.Form["id"];
+        dr["title"] = Request.Form["title"];
+        dr["artist"] = Request.Form["artist"];
+        dr["playtime"] = Request.Form["playtime"];
+        dr["revealed"] = Request.Form["revealed"];
+        dr["rating"] = Request.Form["rating"];
+
+        ds.Tables[0].Rows.Add(dr);
+
+        ds.WriteXml(Server.MapPath("~/App_Data/Songs.xml"));
+    }
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading"><center>New SONG</center></div>
+                <div class="panel-body">
+                    <form class="form-horizontal" method="post">
+                           <div class="form-group">
+                                <label for="id" class="col-md-4 control-label">ID:</label>
+                              
+                                <div class="col-md-6">
+                                        <input type="text" id="id" class="form-control" name="id"/>
+                                 </div>
+                              </div>
+
+                            <div class="form-group">
+                                <label for="title" class="col-md-4 control-label">Title:</label>
+
+                                <div class="col-md-6">
+                                    <input type="text" id="title" class="form-control" name="title"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="artist" class="col-md-4 control-label">Artist:</label>
+
+                                <div class="col-md-6">
+                                    <input type="text" id="artist" class="form-control" name="artist" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="playtime" class="col-md-4 control-label">Playtime:</label>
+
+                                <div class="col-md-6">
+                                    <input type="text" id="playtime" class="form-control" name="playtime" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="revealed" class="col-md-4 control-label">Revealed:</label>
+
+                                <div class="col-md-6">
+                                    <input type="text" id="revealed" class="form-control" name="revealed"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="rating" class="col-md-4 control-label">Rating:</label>
+
+                                <div class="col-md-6">
+                                    <input type="text" id="rating" class="form-control" name="rating"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button id="submit_button" type="submit" class="btn btn-primary">
+                                        Save Song
+                                    </button>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -45,13 +45,16 @@ namespace cSharp_WebApp.Controllers
 
         public ActionResult JSON()
         {
-           
+            return View();
+        }
+
+        public ActionResult Add()
+        {
             return View();
         }
 
         public ActionResult Edit()
         {
-
             return View();
         }
 

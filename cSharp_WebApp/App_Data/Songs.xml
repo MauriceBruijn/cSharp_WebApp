@@ -40,4 +40,52 @@
     <revealed>test4</revealed>
     <rating>test4</rating>
   </song>
+  <song>
+    <id>5</id>
+    <title>test5</title>
+    <artist>test5</artist>
+    <playtime>test5</playtime>
+    <revealed>test5</revealed>
+    <rating>test5</rating>
+  </song>
+  <song>
+    <id>6</id>
+    <title>test6</title>
+    <artist>test6</artist>
+    <playtime>test6</playtime>
+    <revealed>test6</revealed>
+    <rating>test6</rating>
+  </song>
+  <song>
+    <id>7</id>
+    <title>test7</title>
+    <artist>test7</artist>
+    <playtime>test7</playtime>
+    <revealed>test7</revealed>
+    <rating>test7</rating>
+  </song>
+  <song>
+    <id>8</id>
+    <title>test8</title>
+    <artist>test8</artist>
+    <playtime>test8</playtime>
+    <revealed>test8</revealed>
+    <rating>test8</rating>
+  </song>
+  <song>
+    <id>9</id>
+    <title>test9</title>
+    <artist>test9</artist>
+    <playtime>test9</playtime>
+    <revealed>test9</revealed>
+    <rating>test9</rating>
+  </song>
+  <song>
+    <id>10</id>
+    <title>test10</title>
+    <artist>test10</artist>
+    <playtime>test10</playtime>
+    <revealed>test10</revealed>
+    <rating>test10</rating>
+  </song>
 </playlist>

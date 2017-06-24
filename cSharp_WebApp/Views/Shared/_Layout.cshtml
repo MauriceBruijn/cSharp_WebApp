@@ -2,22 +2,50 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Songs</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("XML", "XML", "Songs")</li>
-                    <li>@Html.ActionLink("JSON", "JSON", "Songs")</li>
-                </ul>
-            </div>
-        </div>
+    <div id="app">
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                      <div class="navbar-header">
+                          <!-- Collapsed Hamburger -->
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                              <span class="sr-only">Toggle Navigation</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                          </button>
+                          <a class="navbar-brand">SONGS</a>
+                      </div>
+
+                       <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                           <!-- Left Side Of Navbar -->
+                           <ul class="nav navbar-nav">
+                               <li>@Html.ActionLink("XML", "XML", "Songs")</li>
+                               <li>@Html.ActionLink("JSON", "JSON", "Songs")</li>
+                           </ul>
+
+                           <!-- Right Side Of Navbar -->
+                           <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                       Extra's <span class="caret"></span>
+                                    </a>
+
+                                    <ul class="dropdown-menu" role="menu">
+                                           <li>@Html.ActionLink("Add Song", "Add", "Songs")</li>
+                                    </ul>
+                                </li>
+                           </ul>
+                       </div>
+                   </div>
+            </nav>
     </div>
     <div class="container body-content">
         @RenderBody()

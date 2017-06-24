@@ -7,7 +7,17 @@
 
     if (IsPost)
     {
+        DataRow dr = ds.Tables[0].NewRow();
 
+        dr["title"] = Request.Form["title"];
+        dr["artist"] = Request.Form["artist"];
+        dr["playtime"] = Request.Form["playtime"];
+        dr["revealed"] = Request.Form["revealed"];
+        dr["rating"] = Request.Form["rating"];
+
+        ds.Tables[0].Rows.Add(dr);
+
+        ds.WriteXml(Server.MapPath("~/App_Data/Songs.xml"));
     }
 }
 <div class="container">
@@ -23,7 +33,7 @@
                               <label for="title" class="col-md-4 control-label">Title:</label>
 
                                <div class="col-md-6">
-                                    <input type="text" id="title" class="form-control" name="" value="@dr["title"]"/>
+                                    <input type="text" id="title" class="form-control" name="title" value="@dr["title"]"/>
                                 </div>
                         </div>
 
@@ -31,7 +41,7 @@
                             <label for="artist" class="col-md-4 control-label">Artist:</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="artist" class="form-control" name="" value="@dr["artist"]"/>
+                                <input type="text" id="artist" class="form-control" name="artist" value="@dr["artist"]"/>
                             </div>
                         </div>
 
@@ -39,7 +49,7 @@
                             <label for="playtime" class="col-md-4 control-label">Playtime:</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="playtime" class="form-control" name="" value="@dr["playtime"]"/>
+                                <input type="text" id="playtime" class="form-control" name="playtime" value="@dr["playtime"]"/>
                             </div>
                         </div>
 
@@ -47,7 +57,7 @@
                             <label for="revealed" class="col-md-4 control-label">Revealed:</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="revealed" class="form-control" name="" value="@dr["revealed"]"/>
+                                <input type="text" id="revealed" class="form-control" name="revealed" value="@dr["revealed"]"/>
                             </div>
                         </div>
 
@@ -55,7 +65,7 @@
                             <label for="rating" class="col-md-4 control-label">Rating:</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="rating" class="form-control" name="" value="@dr["rating"]"/>
+                                <input type="text" id="rating" class="form-control" name="rating" value="@dr["rating"]"/>
                             </div>
                         </div>
 
