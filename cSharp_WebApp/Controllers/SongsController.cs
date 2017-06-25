@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Xml;
 using System.Data;
+using cSharp_WebApp.Models;
 
 namespace cSharp_WebApp.Controllers
 {
@@ -18,42 +19,21 @@ namespace cSharp_WebApp.Controllers
 
         public ActionResult XML()
         {
-            DataSet ds = new DataSet("playlist");
-
-            DataTable dtSongs = new DataTable("song");
-
-            DataColumn dcId = new DataColumn("id");
-            DataColumn dcTitle = new DataColumn("title");
-            DataColumn dcArtist = new DataColumn("artist");
-            DataColumn dcPlaytime = new DataColumn("playtime");
-            DataColumn dcRelease = new DataColumn("release");
-            DataColumn dcRating = new DataColumn("rating");
-
-            ds.Tables.Add(dtSongs);
-
-            dtSongs.Columns.Add(dcId);
-            dtSongs.Columns.Add(dcTitle);
-            dtSongs.Columns.Add(dcArtist);
-            dtSongs.Columns.Add(dcPlaytime);
-            dtSongs.Columns.Add(dcRelease);
-            dtSongs.Columns.Add(dcRating);
-
-            ds.ReadXml(Server.MapPath("~/App_Data/Songs.xml"));
-            Session["xmlDataSet"] = ds;
+            Songs songs = new Songs();
             return View();
         }
 
-        public ActionResult Add()
+        public ActionResult Add(Songs a)
         {
             return View();
         }
 
-        public ActionResult Edit()
+        public ActionResult Edit(Songs e)
         {
             return View();
         }
 
-        public ActionResult Delete()
+        public ActionResult Delete(Songs d)
         {
             return View();
         }
