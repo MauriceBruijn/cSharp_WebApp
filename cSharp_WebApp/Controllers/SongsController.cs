@@ -19,21 +19,20 @@ namespace cSharp_WebApp.Controllers
 
         public ActionResult XML()
         {
-            Songs song = new Songs();
             return View();
         }
 
-        public ActionResult Add(Songs a)
+        public ActionResult Add()
         {
             return View();
         }
 
-        public ActionResult Edit(Songs e)
+        public ActionResult Edit()
         {
             return View();
         }
 
-        public ActionResult Delete(Songs d)
+        public ActionResult Delete()
         {
             return View();
         }

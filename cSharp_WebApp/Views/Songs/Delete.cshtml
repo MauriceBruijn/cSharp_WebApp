@@ -10,6 +10,7 @@
         drArray[0].Delete();
 
         ds.WriteXml(Server.MapPath("~/App_Data/Songs.xml"));
+        Response.Redirect("/Songs/XML");
     }
 }
 <div class="container">

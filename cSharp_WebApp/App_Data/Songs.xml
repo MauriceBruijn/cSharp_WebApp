@@ -2,11 +2,11 @@
 <playlist>
   <song>
     <id>0</id>
-    <title>test</title>
-    <artist>test</artist>
-    <playtime>test</playtime>
-    <release>test</release>
-    <rating>test1</rating>
+    <title>test1</title>
+    <artist>test2</artist>
+    <playtime>test3</playtime>
+    <release>test4</release>
+    <rating>test5</rating>
   </song>
   <song>
     <id>1</id>

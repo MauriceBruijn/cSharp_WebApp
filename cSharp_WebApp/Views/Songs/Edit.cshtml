@@ -1,22 +1,17 @@
 ﻿@using System.Data;
+@using cSharp_WebApp.Models;
 @{
-    DataSet ds = Session["xmlDataSet"] as DataSet;
-
+    Songs song = new Songs();
     string id = Request.QueryString["id"];
-    var row = ds.Tables[0].Select("id=" + id);
+    DataRow dr = song.GetSong(id);
+
+    //DataSet ds = Session["xmlDataSet"] as DataSet;
+    //var row = ds.Tables[0].Select("id=" + id);
 
     if (IsPost)
     {
-        DataRow[] table = ds.Tables[0].Select("id=" + id);
-
-        table[0]["id"] = Request.Form["id"];
-        table[0]["title"] = Request.Form["title"];
-        table[0]["artist"] = Request.Form["artist"];
-        table[0]["playtime"] = Request.Form["playtime"];
-        table[0]["release"] = Request.Form["release"];
-        table[0]["rating"] = Request.Form["rating"];
-
-        ds.WriteXml(Server.MapPath("~/App_Data/Songs.xml"));
+        //DataRow[] table = ds.Tables[0].Select("id=" + id);
+        song.UpdateSong(id);
     }
 }
 <div class="container">
@@ -26,8 +21,6 @@
                 <div class="panel-heading"><center>Edit SONG</center></div>
                 <div class="panel-body">
                     <form class="form-horizontal" method="post">
-                        @foreach (DataRow dr in row)
-                        {
                         <div class="form-group">
                               <label for="title" class="col-md-4 control-label">Title:</label>
 
@@ -75,7 +68,6 @@
                                 </button>
                             </div>
                         </div>
-                        }
                     </form>
                 </div>
             </div>
