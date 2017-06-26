@@ -19,7 +19,7 @@ namespace cSharp_WebApp.Controllers
 
         public ActionResult XML()
         {
-            Songs songs = new Songs();
+            Songs song = new Songs();
             return View();
         }
 

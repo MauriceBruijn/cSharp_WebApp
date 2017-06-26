@@ -33,28 +33,28 @@ namespace cSharp_WebApp.Models
             dtSongs.Columns.Add(dcRelease);
             dtSongs.Columns.Add(dcRating);
 
-            ds.ReadXml(Server.MapPath("~/App_Data/Songs.xml"));
-            Session["xmlDataSet"] = ds;
+            ds.ReadXml(HttpContext.Current.Server.MapPath("~/App_Data/Songs.xml"));
+            HttpContext.Current.Session["xmlDataSet"] = ds;
         }
 
-        public void AddSong()
+        public void AddSong(Songs a)
         {
 
         }
 
-        public void DeleteSong()
+        public void DeleteSong(Songs d)
         {
 
         }
 
-        public void UpdateSong()
+        public void UpdateSong(Songs u)
         {
 
         }
 
-        public DataRow GetSong()
+        public void GetSongs(Songs g)
         {
-
+            
         }
     }
 }

@@ -3,24 +3,20 @@
     DataSet ds = Session["xmlDataSet"] as DataSet;
 
     string id = Request.QueryString["id"];
-    var table = ds.Tables[0].Select("id=" + id);
+    var row = ds.Tables[0].Select("id=" + id);
 
     if (IsPost)
     {
-        // PROBLEEMPJE HIER !!
-      /*  DataRow dr = ds.Tables[0].Rows.Add();
+        DataRow table = ds.Tables[0].Select("id=" + id);
 
-        dr["id"] = Request.Form["id"];
-        dr["title"] = Request.Form["title"];
-        dr["artist"] = Request.Form["artist"];
-        dr["playtime"] = Request.Form["playtime"];
-        dr["release"] = Request.Form["release"];
-        dr["rating"] = Request.Form["rating"];
-
-        ds.Tables[0].AcceptChanges();
+        table["id"] = Request.Form["id"];
+        table["title"] = Request.Form["title"];
+        table["artist"] = Request.Form["artist"];
+        table["playtime"] = Request.Form["playtime"];
+        table["release"] = Request.Form["release"];
+        table["rating"] = Request.Form["rating"];
 
         ds.WriteXml(Server.MapPath("~/App_Data/Songs.xml"));
-        */
     }
 }
 <div class="container">
@@ -30,13 +26,13 @@
                 <div class="panel-heading"><center>Edit SONG</center></div>
                 <div class="panel-body">
                     <form class="form-horizontal" method="post">
-                        @foreach (DataRow dr in table)
+                        @foreach (DataRow table in row)
                         {
                         <div class="form-group">
                               <label for="title" class="col-md-4 control-label">Title:</label>
 
                                <div class="col-md-6">
-                                    <input type="text" id="title" class="form-control" name="title" value="@dr["title"]"/>
+                                    <input type="text" id="title" class="form-control" name="title" value="@table["title"]"/>
                                 </div>
                         </div>
 
@@ -44,7 +40,7 @@
                             <label for="artist" class="col-md-4 control-label">Artist:</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="artist" class="form-control" name="artist" value="@dr["artist"]"/>
+                                <input type="text" id="artist" class="form-control" name="artist" value="@table["artist"]"/>
                             </div>
                         </div>
 
@@ -52,7 +48,7 @@
                             <label for="playtime" class="col-md-4 control-label">Playtime:</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="playtime" class="form-control" name="playtime" value="@dr["playtime"]"/>
+                                <input type="text" id="playtime" class="form-control" name="playtime" value="@table["playtime"]"/>
                             </div>
                         </div>
 
@@ -60,7 +56,7 @@
                             <label for="revealed" class="col-md-4 control-label">Revealed:</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="revealed" class="form-control" name="revealed" value="@dr["release"]"/>
+                                <input type="text" id="revealed" class="form-control" name="revealed" value="@table["release"]"/>
                             </div>
                         </div>
 
@@ -68,7 +64,7 @@
                             <label for="rating" class="col-md-4 control-label">Rating:</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="rating" class="form-control" name="rating" value="@dr["rating"]"/>
+                                <input type="text" id="rating" class="form-control" name="rating" value="@table["rating"]"/>
                             </div>
                         </div>
 
