@@ -2,7 +2,7 @@
 @using cSharp_WebApp.Models;
 @{ 
     Songs song = new Songs();
-    DataRow dr = song.AllSongs();
+    DataRow[] drArray = song.AllSongs();
 }
 <div class="container">
     <div class="row">
@@ -19,6 +19,9 @@
                             <th>+</th>
                             <th>-</th>
                         </tr>
+
+                        @foreach (DataRow dr in drArray)
+                        {
                             <tr>
                                 <td>@dr["title"]</td>
                                 <td>@dr["artist"]</td>
@@ -28,6 +31,7 @@
                                 <td><a href="Edit?id=@dr["id"]">Edit</a></td>
                                 <td><a href="Delete?id=@dr["id"]">Delete</a></td>
                             </tr>
+                        }
                     </table>
                 </div>
             </div>

@@ -36,10 +36,10 @@ namespace cSharp_WebApp.Models
             ds.ReadXml(HttpContext.Current.Server.MapPath("~/App_Data/Songs.xml"));
         }
 
-        public DataRow AllSongs()
+        public DataRow[] AllSongs()
         {
-            DataRow[] drArray = ds.Tables[0].Rows;
-            return drArray[0];
+            DataRow[] drArray = ds.Tables[0].Select();
+            return drArray;
         }
         
         public DataRow GetSong(string id)
@@ -81,7 +81,7 @@ namespace cSharp_WebApp.Models
         {
             DataRow dr = GetSong(id);
 
-            dr[0].Delete();
+            dr.Delete();
 
             SaveSongs();
         }
