@@ -1,16 +1,13 @@
 ﻿@using System.Data;
+@using cSharp_WebApp.Models;
 @{
-    DataSet ds = Session["xmlDataSet"] as DataSet;
-
+    Songs song = new Songs();
     string id = Request.QueryString["id"];
+    DataRow dr = song.GetSong(id);
 
     if (IsPost)
     {
-        DataRow[] drArray = ds.Tables[0].Select("id="+ id);
-        drArray[0].Delete();
-
-        ds.WriteXml(Server.MapPath("~/App_Data/Songs.xml"));
-        Response.Redirect("/Songs/XML");
+        song.DeleteSong(id);
     }
 }
 <div class="container">

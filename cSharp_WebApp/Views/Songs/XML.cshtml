@@ -1,4 +1,9 @@
 ﻿@using System.Data;
+@using cSharp_WebApp.Models;
+@{ 
+    Songs song = new Songs();
+    DataRow dr = song.AllSongs();
+}
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
@@ -14,11 +19,6 @@
                             <th>+</th>
                             <th>-</th>
                         </tr>
-                        @{
-                            DataSet ds = Session["xmlDataSet"] as DataSet;
-                        }
-                        @foreach (DataRow dr in ds.Tables[0].Rows)
-                        {
                             <tr>
                                 <td>@dr["title"]</td>
                                 <td>@dr["artist"]</td>
@@ -28,7 +28,6 @@
                                 <td><a href="Edit?id=@dr["id"]">Edit</a></td>
                                 <td><a href="Delete?id=@dr["id"]">Delete</a></td>
                             </tr>
-                        }
                     </table>
                 </div>
             </div>

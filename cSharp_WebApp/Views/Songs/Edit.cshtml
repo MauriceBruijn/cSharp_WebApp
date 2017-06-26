@@ -4,13 +4,9 @@
     Songs song = new Songs();
     string id = Request.QueryString["id"];
     DataRow dr = song.GetSong(id);
-
-    //DataSet ds = Session["xmlDataSet"] as DataSet;
-    //var row = ds.Tables[0].Select("id=" + id);
-
+    
     if (IsPost)
     {
-        //DataRow[] table = ds.Tables[0].Select("id=" + id);
         song.UpdateSong(id);
     }
 }
