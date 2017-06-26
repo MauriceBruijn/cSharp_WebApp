@@ -6,7 +6,7 @@
     <artist>test</artist>
     <playtime>test</playtime>
     <release>test</release>
-    <rating>test</rating>
+    <rating>test1</rating>
   </song>
   <song>
     <id>1</id>
@@ -22,7 +22,7 @@
     <artist>test</artist>
     <playtime>test</playtime>
     <release>test</release>
-    <rating>test</rating>
+    <rating>test1</rating>
   </song>
   <song>
     <id>3</id>
