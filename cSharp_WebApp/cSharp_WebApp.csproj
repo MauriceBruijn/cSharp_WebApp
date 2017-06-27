@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\SongsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,11 +178,13 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MovieList.cs" />
     <Compile Include="Models\Songs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Data\Movies.json" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -239,6 +242,7 @@
     <Content Include="Views\Songs\Delete.cshtml" />
     <Content Include="Views\Songs\Edit.cshtml" />
     <Content Include="Views\Songs\Add.cshtml" />
+    <Content Include="Views\Movies\Json.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,0 +1,33 @@
+﻿@using System.Data;
+@using Newtonsoft.Json;
+@using cSharp_WebApp.Models;
+@{
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string json = File.ReadAllText(Server.MapPath("~/App_Data/Movies.json"));
+    List<Movie> bsObj = JsonConvert.DeserializeObject<MovieList>(json).Movies.ToList();
+}
+
+        <h2>Movies</h2>
+        <table class="tableh table table-reflow table-hover">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Playtime</th>
+                <th>Release</th>
+            </tr>
+            @foreach (Movie m in bsObj)
+            {
+                <tr>
+                    <td>@m.Id</td>
+                    <td>@m.Title</td>
+                    <td>@m.Artist</td>
+                    <td>@m.Playtime</td>
+                    <td>@m.Release</td>
+                </tr>
+            }
+
+        </table>
+
