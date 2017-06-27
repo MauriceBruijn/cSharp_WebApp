@@ -2,50 +2,10 @@
 <playlist>
   <song>
     <id>0</id>
-    <title>test1</title>
-    <artist>test2</artist>
-    <playtime>test3</playtime>
-    <release>test4</release>
-    <rating>test</rating>
-  </song>
-  <song>
-    <id>1</id>
-    <title>test</title>
-    <artist>test</artist>
-    <playtime>test</playtime>
-    <release>test</release>
-    <rating>test</rating>
-  </song>
-  <song>
-    <id>2</id>
-    <title>test</title>
-    <artist>test</artist>
-    <playtime>test</playtime>
-    <release>test</release>
-    <rating>test1</rating>
-  </song>
-  <song>
-    <id>3</id>
-    <title>test</title>
-    <artist>test</artist>
-    <playtime>test</playtime>
-    <release>test</release>
-    <rating>test</rating>
-  </song>
-  <song>
-    <id>4</id>
-    <title>test</title>
-    <artist>test</artist>
-    <playtime>test</playtime>
-    <release>test</release>
-    <rating>test</rating>
-  </song>
-  <song>
-    <id>5</id>
-    <title>test</title>
-    <artist>test</artist>
-    <playtime>test</playtime>
-    <release>test</release>
-    <rating>test</rating>
+    <title>test0</title>
+    <artist>test0</artist>
+    <playtime>test0</playtime>
+    <release>test0</release>
+    <rating>test0</rating>
   </song>
 </playlist>
